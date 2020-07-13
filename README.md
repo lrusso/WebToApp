@@ -1,6 +1,6 @@
 # Web To App In OS X
 
-Example of how to port an HTML5 game to a native OS X App.
+Example of how to port a Web or HTML5 game to a native Mac or OS X App.
 
 ## How to get the .app file
 
