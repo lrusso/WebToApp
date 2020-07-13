@@ -9,7 +9,7 @@ The App has a WebView that shows you the content of a embedded HTML file. Simple
 ## Things to know (just in case)
 
 * The Mac porting was designed with Xcode 11.
-* The Android porting was designed with Android Studio 3.
+* The Android porting was designed with Android Studio 3.5.
 
 ## How to get the .app file (for the Mac version only)
 
