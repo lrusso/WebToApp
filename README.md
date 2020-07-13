@@ -9,7 +9,7 @@ The App has a WebView that shows you the content of a embedded HTML file. Simple
 ## Things to know
 
 
-| PLATFORM  | DESIGNED WITH  | WORKS UNDER |
+| PORTING TO  | DESIGNED WITH  | WORKS UNDER |
 | :------------ |:--------------- |:---------------|
 | OS X | Xcode 11| OS X 10.12 or later |
 | Android | Android Studio 3.5 | Android 5.0 or later |
