@@ -14,7 +14,7 @@ The App has a WebView that shows you the content of a embedded HTML file. Simple
 | OS X | Xcode 11| OS X 10.12 or later |
 | Android | Android Studio 3.5 | Android 5.0 or later |
 
-## How to get the .app file (for the Mac version only)
+## How to get the .app file (for the OS X version only)
 
 * Open the Mac project in Xcode.
 
