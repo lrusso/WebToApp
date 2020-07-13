@@ -29,6 +29,6 @@ The App has a WebView that shows you the content of a embedded HTML file. Simple
 
 * There is your .app file.
 
-## Screenshots
+## Mac screenshot
 
 ![alt screenshot](https://raw.githubusercontent.com/lrusso/WebToApp/master/Screenshot1.png)
