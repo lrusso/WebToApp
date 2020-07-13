@@ -18,17 +18,19 @@ The App has a WebView that shows you the content of a embedded HTML file. Simple
 
 * Open the Mac project in Xcode.
 
-* Click in **Product/Archive**.
+* Click in **Product**.
+
+* Click in **Archive**.
 
 * Right click in the first item of the list and then click in **Show in Finder**.
 
-* Right click to (ProductName).xcarchive file.
+* Right click to **(ProductName).xcarchive** file.
 
 * Click in **Show package contents**.
 
-* Go to **Products** folder.
+* Go to the **Products** folder.
 
-* Go to **Applications** folder.
+* Go to the **Applications** folder.
 
 * There is your .app file.
 
