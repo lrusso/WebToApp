@@ -24,7 +24,7 @@ The App has a WebView that shows you the content of a embedded HTML file. Simple
 
 * Right click in the first item of the list and then click in **Show in Finder**.
 
-* Right click to **(ProductName).xcarchive** file.
+* Right click in the **(ProductName).xcarchive** file.
 
 * Click in **Show package contents**.
 
