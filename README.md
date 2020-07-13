@@ -2,6 +2,9 @@
 
 Examples of how to port a Web or HTML5 game to a native Android or Mac App.
 
+* The Mac porting was designed with Xcode.
+* The Android porting was designed with Android Studio.
+
 ## How to get the .app file (for the Mac version only)
 
 * In Xcode and then click in **Product/Archive**.
