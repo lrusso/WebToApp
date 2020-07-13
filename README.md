@@ -36,3 +36,7 @@ The App has a WebView that shows you the content of a embedded HTML file. Simple
 ## Android screenshot
 
 ![alt screenshot](https://raw.githubusercontent.com/lrusso/WebToApp/master/Screenshot2.jpg)
+
+## Web version
+
+https://lrusso.github.io/Spider/Spider.htm
