@@ -19,4 +19,4 @@ Examples of how to port a Web or HTML5 game to a native Android or Mac App.
 
 * Go to **Applications** folder.
 
-* There is your .app project file.
+* There is your .app file.
