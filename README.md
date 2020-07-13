@@ -2,7 +2,7 @@
 
 Example of how to port a Web or HTML5 game to a native Android or Mac App.
 
-## How to get the .app file (Mac version only)
+## How to get the .app file (for the Mac version only)
 
 * In Xcode and then click in **Product/Archive**.
 
