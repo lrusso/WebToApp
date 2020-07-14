@@ -1,6 +1,6 @@
 # Web To App
 
-Examples of how to port a Web or HTML5 game to a native Android or Mac App.
+Examples of how to port a Web or HTML5 game to a native Android or Mac OS X App.
 
 ## How does it work
 
