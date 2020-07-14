@@ -6,7 +6,7 @@ Examples of how to port a Web or HTML5 game to a native Android or Mac OS X App.
 
 The App has a WebView that shows you the content of a embedded HTML file. Simple as that. So it doesn't require of an Internet connection to play your Web game.
 
-## Things to know
+## Porting details
 
 
 | PORTING TO  | DESIGNED WITH  | WORKS UNDER |
