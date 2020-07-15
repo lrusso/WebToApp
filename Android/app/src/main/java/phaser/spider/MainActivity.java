@@ -28,6 +28,7 @@ public class MainActivity extends Activity
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setAppCacheEnabled(true);
         webView.getSettings().setTextZoom(100);
+        webView.setWebViewClient(new myWebClient());
 
         String htmlData = loadAssetTextAsString("SpiderGame.htm", this);
         webView.loadDataWithBaseURL(null, htmlData, "text/html", "UTF-8",null);
