@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.DownloadListener;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
@@ -25,6 +26,7 @@ public class MainActivity extends Activity
     private static ValueCallback<Uri[]> mUploadMessage5;
     private final static int FILECHOOSER_RESULTCODE = 1;
     private final static int PERMISSION_REQUEST = 123;
+    private WebView webView;
 
     @Override protected void onCreate(Bundle savedInstanceState)
         {
@@ -33,7 +35,7 @@ public class MainActivity extends Activity
 
         hideNavigationBar();
 
-        WebView webView = (WebView) findViewById(R.id.webView1);
+        webView = (WebView) findViewById(R.id.webView1);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setAllowFileAccess(true);
         webView.getSettings().setDomStorageEnabled(true);
@@ -41,6 +43,9 @@ public class MainActivity extends Activity
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setAppCacheEnabled(true);
         webView.getSettings().setTextZoom(100);
+
+        webView.addJavascriptInterface(new JavaScriptInterface(this), "Android");
+        webView.setDownloadListener(new DownloadListener(){@Override public void onDownloadStart(String url, String userAgent, String contentDisposition, String mimeType, long contentLength) {webView.loadUrl(JavaScriptInterface.getBase64StringFromBlobUrl(url));}});
 
         webView.setWebViewClient(new myWebClient());
         webView.setWebChromeClient(new WebChromeClient()
