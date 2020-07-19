@@ -30,4 +30,21 @@ class ViewController: NSViewController, WKUIDelegate
         self.view = webView
         }
     }
+
+    func webView(_ webView: WKWebView, runOpenPanelWith parameters: WKOpenPanelParameters, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping ([URL]?) -> Void) {
+        webView.evaluateJavaScript("document.body.style.pointerEvents='none';")
+        let openPanel = NSOpenPanel()
+        openPanel.canChooseFiles = true
+        openPanel.begin { (result) in
+            if result == NSApplication.ModalResponse.OK {
+                if let url = openPanel.url {
+                    webView.evaluateJavaScript("document.body.style.pointerEvents='auto';")
+                    completionHandler([url])
+                }
+            } else if result == NSApplication.ModalResponse.cancel {
+                webView.evaluateJavaScript("document.body.style.pointerEvents='auto';")
+                completionHandler(nil)
+            }
+        }
+    }
 }
