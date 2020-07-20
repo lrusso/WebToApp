@@ -35,6 +35,12 @@ The App has a WebView that shows you the content of a embedded HTML file. Simple
 </script>
 ```
 
+## Web example - How to write a file
+
+```
+
+```
+
 ## How to get the .app file (for the OS X version only)
 
 * Open the Mac project in Xcode.
