@@ -38,7 +38,27 @@ The App has a WebView that shows you the content of a embedded HTML file. Simple
 ## Web example - How to write a file
 
 ```
+function download_Blob(data, fileName, mimeType)
+   {
+   var blob, url;
+   blob = new Blob([data], {type: mimeType});
+   url = window.URL.createObjectURL(blob);
+   download_URL(url, fileName);
+   }
 
+function download_URL(data, fileName)
+   {
+   var a;
+   a = document.createElement("a");
+   a.href = data;
+   a.download = fileName;
+   document.body.appendChild(a);
+   a.style = "display: none";
+   a.click();
+   a.remove();
+   }
+
+download_Blob("myData123", "MyFileName.txt", "application/octet-stream");
 ```
 
 ## How to get the .app file (for the OS X version only)
