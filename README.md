@@ -10,9 +10,9 @@ The App has a WebView that shows you the content of a embedded HTML file. Simple
 
 
 | PORTING TO  | WORKS UNDER | READ FILES | WRITE FILES
-| :------------ |:--------------- |:--------------- |:---------------|
+| :------------ |:--------------- |:---------------: |:---------------:|
 | OS X | OS X 10.12 or later | Yes |
-| Android | Android 5.0 or later | Yes |
+| Android | Android 5.0 or later | Yes | Yes
 
 ## How to get the .app file (for the OS X version only)
 
