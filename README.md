@@ -15,7 +15,7 @@ The App has a WebView that shows you the content of a embedded HTML file. Simple
 | OS X | OS X 10.12 or later | Yes | *In progress*
 | Android | Android 5.0 or later | Yes | Yes
 
-## Web example of how to read a file
+## Web example - How to read a file
 
 ```
 <input type="file" onchange="readingAFile(event.target.files);"/>
