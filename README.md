@@ -8,7 +8,6 @@ The App has a WebView that shows you the content of a embedded HTML file. Simple
 
 ## Porting details
 
-
 | PORTING TO  | WORKS UNDER | READ FILES | WRITE FILES
 | :------------ |:--------------- |:---------------: |:---------------:|
 | iOS | iOS 13.0 or later | *In progress* | *In progress*
