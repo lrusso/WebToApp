@@ -34,7 +34,7 @@ The App has a WebView that shows you the content of a embedded HTML file. Also, 
 </script>
 ```
 
-## Web example - How to write a file
+## Web example - How to write (download) a file
 
 ```
 function download_Blob(data, fileName, mimeType)
