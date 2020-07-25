@@ -31,5 +31,9 @@ class ViewController: UIViewController, WKUIDelegate, UIBarPositioningDelegate
             self.setNeedsStatusBarAppearanceUpdate()
         }
     }
+    
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return true
+    }
 
 }
