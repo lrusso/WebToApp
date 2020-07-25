@@ -14,7 +14,7 @@ The App has a WebView that shows you the content of a embedded HTML file. Also, 
 | OS X | OS X 10.12 or later | Yes | *In progress*
 | Android | Android 5.0 or later | Yes | Yes
 
-## Web example - How to read a file
+## Web example - How to read a file from the device
 
 ```
 <input type="file" onchange="readingAFile(event.target.files);"/>
@@ -34,7 +34,7 @@ The App has a WebView that shows you the content of a embedded HTML file. Also, 
 </script>
 ```
 
-## Web example - How to write (download) a file
+## Web example - How to write (download) a file to the device
 
 ```
 function download_Blob(data, fileName, mimeType)
