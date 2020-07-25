@@ -28,7 +28,6 @@ class ViewController: UIViewController, WKUIDelegate, UIBarPositioningDelegate
         let path = url.deletingLastPathComponent()
         self.webView.loadFileURL ( url, allowingReadAccessTo: path)
         self.view = webView
-            self.setNeedsStatusBarAppearanceUpdate()
         }
     }
     
