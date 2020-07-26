@@ -60,6 +60,10 @@ function download_URL(data, fileName)
 download_Blob("myData123", "MyFileName.txt", "application/octet-stream");
 ```
 
+## Android porting notes
+
+The filename that it is given to the blob URL can be found in **app/src/main/res/values/strings.xml** as a String resource named **saveFilename**.
+
 ## How to get the .app file (for the OS X version only)
 
 * Open the Mac project in Xcode.
