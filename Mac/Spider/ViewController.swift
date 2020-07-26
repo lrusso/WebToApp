@@ -9,7 +9,7 @@
 import Cocoa
 import WebKit
 
-class ViewController: NSViewController, WKUIDelegate
+class ViewController: NSViewController, WKUIDelegate, WKNavigationDelegate
     {
     var webView: WKWebView!
 
@@ -19,6 +19,7 @@ class ViewController: NSViewController, WKUIDelegate
         webConfiguration.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
         webView = WKWebView (frame: CGRect(x:0, y:0, width: 800, height: 600), configuration:webConfiguration)
         webView.uiDelegate = self
+        webView.navigationDelegate = self
         view = webView
         }
 
@@ -47,4 +48,27 @@ class ViewController: NSViewController, WKUIDelegate
             }
         }
     }
+
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        defer {
+            decisionHandler(.allow)
+        }
+        if (navigationAction.navigationType == .linkActivated) {
+
+            let url = navigationAction.request.url
+            let scheme = url?.scheme ?? ""
+            let supportedSchemes = ["blob"]
+
+            if (supportedSchemes.contains(scheme)) {
+                print("blob url that must be downloaded as a file")
+                print(url ?? "")
+                return
+                }
+            else {
+                decisionHandler(.allow)
+            }
+
+        }
+    }
+
 }
