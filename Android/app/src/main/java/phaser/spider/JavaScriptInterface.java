@@ -56,7 +56,7 @@ public class JavaScriptInterface {
             folder.mkdirs();
 
             // Getting the format and content that the file will have
-            String fileNameRAW = context.getResources().getString(R.string.saveFilename);
+            String fileNameRAW = GlobalVars.filename;
 
             String fileName = "";
             if (fileNameRAW.indexOf(".")>0)

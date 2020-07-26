@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.ConsoleMessage;
 import android.webkit.DownloadListener;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
@@ -90,6 +91,18 @@ public class MainActivity extends Activity
                 startActivityForResult(Intent.createChooser(i, "File Chooser"), FILECHOOSER_RESULTCODE);
                 return true;
                 }
+
+            @Override public boolean onConsoleMessage(ConsoleMessage consoleMessage)
+                {
+                String stringMessage = consoleMessage.message();
+
+                if (stringMessage.startsWith("WEBTOAPP_FILENAME="))
+                    {
+                    GlobalVars.filename = stringMessage.substring(18,stringMessage.length());
+                    }
+
+                return true;
+                };
             });
 
         String htmlData = loadAssetTextAsString("SpiderGame.htm", this);
