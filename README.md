@@ -64,7 +64,11 @@ download_Blob("myData123", "MyFileName.txt", "application/octet-stream");
 
 The filename given to every downloaded Blob URL can be found in **app/src/main/res/values/strings.xml** as a String resource named **saveFilename**.
 
-## How to get the .app file (for the OS X version only)
+## iOS porting notes
+
+## OS X porting notes
+
+How to get the .app file?
 
 * Open the Mac project in Xcode.
 
