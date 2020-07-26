@@ -9,13 +9,14 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate
+class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler
     {
     var webView: WKWebView!
 
     override func loadView()
         {
         let webConfiguration = WKWebViewConfiguration()
+        webConfiguration.userContentController.add(self, name: "readBlob")
         webConfiguration.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
         webView = WKWebView (frame: CGRect(x:0, y:0, width: 800, height: 600), configuration:webConfiguration)
         webView.uiDelegate = self
@@ -52,6 +53,10 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate
             }
 
         }
+    }
+
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        print(message.body)
     }
 
 }
