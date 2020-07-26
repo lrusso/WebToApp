@@ -66,7 +66,11 @@ The filename given to every downloaded Blob URL can be found in **app/src/main/r
 
 ## iOS porting notes
 
+The filename given to every downloaded Blob URL can be found *In progress*.
+
 ## OS X porting notes
+
+The filename given to every downloaded Blob URL can be found *In progress*.
 
 How to get the .app file?
 
