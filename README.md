@@ -39,10 +39,19 @@ The App has a WebView that shows you the content of a embedded HTML file. Also, 
 ```
 function download_Blob(data, fileName, mimeType)
    {
-   var blob, url;
-   blob = new Blob([data], {type: mimeType});
-   url = window.URL.createObjectURL(blob);
-   download_URL(url, fileName);
+   var usingMac = !!navigator.platform && /Mac/.test(navigator.platform);
+   var usingiOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+
+   if (usingMac==true || usingiOS==true)
+      {
+      try{window.webkit.messageHandlers.readBlob.postMessage(data);}catch(err){}
+      }
+      else
+      {
+      var blob = new Blob([data], {type: mimeType});
+      var url = window.URL.createObjectURL(blob);
+      download_URL(url, fileName);
+      }
    }
 
 function download_URL(data, fileName)
