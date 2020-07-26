@@ -12,12 +12,11 @@ import WebKit
 class ViewController: NSViewController, WKUIDelegate, WKScriptMessageHandler
     {
     var webView: WKWebView!
-    let saveFilename: String = "MyFile.state"
 
     override func loadView()
         {
         let webConfiguration = WKWebViewConfiguration()
-        webConfiguration.userContentController.add(self, name: "readBlob")
+        webConfiguration.userContentController.add(self, name: "webToApp")
         webConfiguration.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
         webView = WKWebView (frame: CGRect(x:0, y:0, width: 800, height: 600), configuration:webConfiguration)
         webView.uiDelegate = self
@@ -51,11 +50,13 @@ class ViewController: NSViewController, WKUIDelegate, WKScriptMessageHandler
     }
 
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        let fileContent = message.body as! NSString
+        let blobMessage = message.body as? NSDictionary
+        let filename = blobMessage?.object(forKey: "filename") as? String ?? ""
+        let fileContent = blobMessage?.object(forKey: "fileContent") as? String ?? ""
         let fileFolder = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask)[0] as NSURL
-        guard let filePath = fileFolder.appendingPathComponent(saveFilename) else { return }
+        guard let filePath = fileFolder.appendingPathComponent(filename) else { return }
         do {
-            try fileContent.write(to: filePath, atomically: true, encoding: String.Encoding.utf8.rawValue)
+            try fileContent.write(to: filePath, atomically: true, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
         }
         catch {
         }
