@@ -31,8 +31,4 @@ class ViewController: UIViewController, WKUIDelegate, UIBarPositioningDelegate
         }
     }
     
-    override var prefersHomeIndicatorAutoHidden: Bool {
-        return true
-    }
-
 }
