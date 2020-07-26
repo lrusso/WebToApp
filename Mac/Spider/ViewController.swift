@@ -55,6 +55,13 @@ class ViewController: NSViewController, WKUIDelegate, WKScriptMessageHandler
         let fileContent = blobMessage?.object(forKey: "fileContent") as? String ?? ""
         let fileFolder = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask)[0] as NSURL
         guard let filePath = fileFolder.appendingPathComponent(filename) else { return }
+
+        if (FileManager.default.fileExists(atPath: filePath.path)) {
+            print("THE FILE EXISTS")
+        } else {
+            print("THE FILE DOESN'T EXISTS")
+        }
+
         do {
             try fileContent.write(to: filePath, atomically: true, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
         }
