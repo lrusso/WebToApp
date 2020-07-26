@@ -72,7 +72,7 @@ The filename given to every downloaded Blob URL can be found *In progress*.
 
 The filename given to every downloaded Blob URL can be found *In progress*.
 
-How to get the .app file?
+## OS X - How to get the .app file?
 
 * Open the Mac project in Xcode.
 
