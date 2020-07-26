@@ -4,7 +4,7 @@ Examples of how to port a Web or HTML5 game to a native Android, iOS and Mac OS 
 
 ## How does it work
 
-The App has a WebView that shows you the content of a embedded HTML file. Also, you can read files from the device and write (download) files to it. For last, in the Android version the Web file is in **app/src/main/assets/SpiderGame.htm** and in the iOS/Mac version is in **www/SpiderGame.htm**.
+The App has a WebView that shows you the content of a embedded HTML file. Also, you can read files from the device and write (download) files to it. For last, in the Android version the Web file is in **app/src/main/assets/SpiderGame.htm** and in the iOS/Mac OS X version is in **www/SpiderGame.htm**.
 
 ## Porting details
 
