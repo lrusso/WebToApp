@@ -26,7 +26,7 @@ The App has a WebView that shows you the content of a embedded HTML file. Also, 
       filereader.file_name = files[0].name;
       filereader.onload = function()
          {
-         var fileName = files[0].name;
+         var filename = files[0].name;
          var fileContent = this.result;
          };
       filereader.readAsArrayBuffer(files[0]);
