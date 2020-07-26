@@ -70,7 +70,7 @@ download_Blob("myData123", "MyFileName.txt", "application/octet-stream");
 
 ## Android porting notes
 
-The filename given to every downloaded Blob URL can be found in **app/src/main/res/values/strings.xml** as a String resource named **saveFilename**.
+The filename given to every downloaded Blob URL can be found in **app/src/main/res/values/strings.xml** as a String resource named **saveFilename**. Every downloaded file is automatically writen in the **Downloads** folder.
 
 ## iOS porting notes
 
@@ -78,7 +78,7 @@ The filename given to every downloaded Blob URL can be found *In progress*.
 
 ## OS X porting notes
 
-The filename given to every downloaded Blob URL can be found in **ViewController.swift** as a String variable named **saveFilename**.
+The filename given to every downloaded Blob URL can be found in **ViewController.swift** as a String variable named **saveFilename**. Every downloaded file is automatically writen in the **Downloads** folder.
 
 ## OS X porting tutorial - How to get the .app file?
 
