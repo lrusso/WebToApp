@@ -12,6 +12,7 @@ import WebKit
 class ViewController: NSViewController, WKUIDelegate, WKScriptMessageHandler
     {
     var webView: WKWebView!
+    let saveFilename: String = "MyFile.state"
 
     override func loadView()
         {
@@ -50,7 +51,14 @@ class ViewController: NSViewController, WKUIDelegate, WKScriptMessageHandler
     }
 
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        print(message.body)
+        let fileContent = message.body as! NSString
+        let fileFolder = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask)[0] as NSURL
+        guard let filePath = fileFolder.appendingPathComponent(saveFilename) else { return }
+        do {
+            try fileContent.write(to: filePath, atomically: true, encoding: String.Encoding.utf8.rawValue)
+        }
+        catch {
+        }
     }
 
 }
