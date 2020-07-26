@@ -78,7 +78,7 @@ The filename given to every downloaded Blob URL can be found *In progress*.
 
 ## OS X porting notes
 
-The filename given to every downloaded Blob URL can be found *In progress*.
+The filename given to every downloaded Blob URL can be found in **ViewController.swift** as a String variable named **saveFilename**.
 
 ## OS X porting tutorial - How to get the .app file?
 
