@@ -46,7 +46,7 @@ function download_Blob(data, fileName, mimeType)
       }
    catch(err)
       {
-      // Sending the data to the Android App and all the Web browsers
+      // Sending the data to the Android App or a Web browser
       var blob = new Blob([data], {type: mimeType});
       var url = window.URL.createObjectURL(blob);
       download_URL(url, fileName);
