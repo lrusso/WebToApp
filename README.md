@@ -42,10 +42,10 @@ function download_Blob(data, fileName, mimeType)
    try
       {
       // Creating the object with the data for the iOS or OS X native App
-      var WEB_TO_APP_FILENAME = {filename: fileName, fileContent: data};
+      var WEBTOAPP_DATA = {filename: fileName, fileContent: data};
 
       // Sending the object to the iOS or OS X native App
-      window.webkit.messageHandlers.webToApp.postMessage(WEB_TO_APP_FILENAME);
+      window.webkit.messageHandlers.webToApp.postMessage(WEBTOAPP_DATA);
       }
    catch(err)
       {
