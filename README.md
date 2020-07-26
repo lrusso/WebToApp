@@ -70,7 +70,7 @@ download_Blob("myData123", "MyFileName.txt", "application/octet-stream");
 
 ## Android porting notes
 
-The filename given to every downloaded Blob URL can be found in **app/src/main/res/values/strings.xml** as a String resource named **saveFilename**. Every downloaded file is automatically writen in the **Downloads** folder.
+The filename given to every downloaded Blob URL can be found in **app/src/main/res/values/strings.xml** as a String resource named **saveFilename**. Every downloaded file is automatically written in the **Downloads** folder.
 
 ## iOS porting notes
 
