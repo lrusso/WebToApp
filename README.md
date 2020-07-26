@@ -49,6 +49,9 @@ function download_Blob(data, fileName, mimeType)
       }
    catch(err)
       {
+      // Sending the filename to the Android native App
+      console.log("WEBTOAPP_FILENAME=" + fileName);
+
       // Sending the data to the Android native App or a Web browser
       var blob = new Blob([data], {type: mimeType});
       var url = window.URL.createObjectURL(blob);
@@ -73,7 +76,7 @@ download_Blob("myData123", "MyFileName.txt", "application/octet-stream");
 
 ## Android porting notes
 
-The filename given to every downloaded Blob URL can be found in **app/src/main/res/values/strings.xml** as a String resource named **saveFilename**. Every downloaded Blob file is automatically written in the **Downloads** folder.
+Every downloaded Blob file is automatically written in the **Downloads** folder.
 
 ## iOS porting notes
 
