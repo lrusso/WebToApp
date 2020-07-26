@@ -76,7 +76,7 @@ download_Blob("myData123", "MyFileName.txt", "application/octet-stream");
 
 ## Android porting notes
 
-Every downloaded Blob file is automatically written in the **Downloads** folder.
+Every downloaded Blob file is automatically written in the **Downloads** folder. If the file already exists, a new file will be created with a suffix, for example: **MyFileName(1).txt**.
 
 ## iOS porting notes
 
