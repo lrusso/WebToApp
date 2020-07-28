@@ -84,7 +84,7 @@ The filename given to every downloaded Blob URL can be found *In progress*.
 
 ## OS X porting notes
 
-Every downloaded Blob file is automatically written in the **Downloads** folder.
+Every downloaded Blob file is automatically written in the **Downloads** folder. If the file already exists, a new file will be created with a suffix, for example: **MyFileName(1).txt**.
 
 ## OS X porting tutorial - How to get the .app file?
 
