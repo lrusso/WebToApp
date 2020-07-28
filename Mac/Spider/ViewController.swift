@@ -54,46 +54,46 @@ class ViewController: NSViewController, WKUIDelegate, WKScriptMessageHandler
         let filename = blobMessage?.object(forKey: "filename") as? String ?? ""
         let fileContent = blobMessage?.object(forKey: "fileContent") as? String ?? ""
         let fileFolder = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask)[0] as NSURL
-        
-        
-        
-        
-        guard let filePath = fileFolder.appendingPathComponent(filename) else { return }
 
-
-        
-        
-        
         let fileNameRAW = filename
 
         var fileName = ""
-        if (fileNameRAW.contains("."))
-            {
+        if (fileNameRAW.contains(".")) {
             fileName = String(fileNameRAW[fileNameRAW.startIndex..<fileNameRAW.lastIndex(of: ".")!])
-            }
-            else
-            {
+        } else {
             fileName = fileNameRAW
-            }
-        
+        }
+
         var fileFormat = ""
-        if (fileNameRAW.contains("."))
-            {
+        if (fileNameRAW.contains(".")) {
             fileFormat = String(fileNameRAW[fileNameRAW.lastIndex(of: ".")!..<fileNameRAW.endIndex])
-            }
-        
+        }
+
         var fileCanBeCreated = false
         var counter = 0
-        
 
-        
-        
-        
-        if (FileManager.default.fileExists(atPath: filePath.path)) {
-            print("THE FILE EXISTS")
-        } else {
-            print("THE FILE DOESN'T EXISTS")
+        while (fileCanBeCreated==false) {
+            if (counter==0) {
+                guard let filePath = fileFolder.appendingPathComponent(fileNameRAW) else { return }
+                if (FileManager.default.fileExists(atPath: filePath.path)==false) {
+                    fileName = fileName + fileFormat
+                    fileCanBeCreated = true
+                } else {
+                    counter = counter + 1
+                }
+            } else {
+                let newFileName = fileName + "(" + String(counter) + ")" + fileFormat
+                guard let filePath = fileFolder.appendingPathComponent(newFileName) else { return }
+                if (FileManager.default.fileExists(atPath: filePath.path)==false) {
+                    fileName = newFileName
+                    fileCanBeCreated = true
+                } else {
+                    counter = counter + 1
+                }
+            }
         }
+
+        guard let filePath = fileFolder.appendingPathComponent(fileName) else { return }
 
         do {
             try fileContent.write(to: filePath, atomically: true, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
