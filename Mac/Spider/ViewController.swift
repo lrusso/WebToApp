@@ -54,8 +54,43 @@ class ViewController: NSViewController, WKUIDelegate, WKScriptMessageHandler
         let filename = blobMessage?.object(forKey: "filename") as? String ?? ""
         let fileContent = blobMessage?.object(forKey: "fileContent") as? String ?? ""
         let fileFolder = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask)[0] as NSURL
+        
+        
+        
+        
         guard let filePath = fileFolder.appendingPathComponent(filename) else { return }
 
+
+        
+        
+        
+        let fileNameRAW = filename
+
+        var fileName = ""
+        if (fileNameRAW.contains("."))
+            {
+            let startIndex = fileNameRAW.index(fileNameRAW.startIndex, offsetBy: 0)
+            let endIndex = fileNameRAW.lastIndex(of: ".")!
+            fileName = String(fileNameRAW[startIndex..<endIndex])
+            }
+            else
+            {
+            fileName = fileNameRAW
+            }
+        
+        var fileFormat = ""
+        if (fileName.contains("."))
+            {
+            
+            }
+        
+        var fileBeCreated = false
+        var counter = 0
+        
+
+        
+        
+        
         if (FileManager.default.fileExists(atPath: filePath.path)) {
             print("THE FILE EXISTS")
         } else {
