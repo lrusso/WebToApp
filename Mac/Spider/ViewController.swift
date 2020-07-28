@@ -69,9 +69,7 @@ class ViewController: NSViewController, WKUIDelegate, WKScriptMessageHandler
         var fileName = ""
         if (fileNameRAW.contains("."))
             {
-            let startIndex = fileNameRAW.index(fileNameRAW.startIndex, offsetBy: 0)
-            let endIndex = fileNameRAW.lastIndex(of: ".")!
-            fileName = String(fileNameRAW[startIndex..<endIndex])
+            fileName = String(fileNameRAW[fileNameRAW.startIndex..<fileNameRAW.lastIndex(of: ".")!])
             }
             else
             {
@@ -79,12 +77,12 @@ class ViewController: NSViewController, WKUIDelegate, WKScriptMessageHandler
             }
         
         var fileFormat = ""
-        if (fileName.contains("."))
+        if (fileNameRAW.contains("."))
             {
-            
+            fileFormat = String(fileNameRAW[fileNameRAW.lastIndex(of: ".")!..<fileNameRAW.endIndex])
             }
         
-        var fileBeCreated = false
+        var fileCanBeCreated = false
         var counter = 0
         
 
