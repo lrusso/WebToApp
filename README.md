@@ -80,7 +80,7 @@ Every downloaded Blob file is automatically written in the **Downloads** folder.
 
 ## iOS porting notes
 
-If your App is not going to save an image, delete the **NSPhotoLibraryUsageDescription** and **NSPhotoLibraryAddUsageDescription** keys from the **Info.plist**. If that is not the case, update the description for it.
+If your App is not going to save an image, delete the **NSPhotoLibraryUsageDescription** and **NSPhotoLibraryAddUsageDescription** keys from the **Info.plist**.
 
 ## OS X porting notes
 
