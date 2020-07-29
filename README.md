@@ -10,7 +10,7 @@ The App has a WebView that shows you the content of a embedded HTML file. Also, 
 
 | PORTING TO  | WORKS UNDER | READ FILES | WRITE FILES
 | :------------ |:--------------- |:---------------: |:---------------:|
-| iOS | iOS 10.0 or later | Yes | *In progress*
+| iOS | iOS 10.0 or later | Yes | Yes
 | OS X | OS X 10.12 or later | Yes | Yes
 | Android | Android 5.0 or later | Yes | Yes
 
