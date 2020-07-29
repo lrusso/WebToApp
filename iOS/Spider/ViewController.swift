@@ -16,7 +16,7 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
     override func loadView()
         {
         let webConfiguration = WKWebViewConfiguration()
-        webConfiguration.userContentController.add(self, name: "readBlob")
+        webConfiguration.userContentController.add(self, name: "webToApp")
         webConfiguration.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
         webView = WKWebView (frame: CGRect(x:0, y:0, width: 800, height: 600), configuration:webConfiguration)
         webView.uiDelegate = self
@@ -56,7 +56,19 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
     }
 
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        print(message.body)
+        do {
+            let blobMessage = message.body as? NSDictionary
+            let filename = blobMessage?.object(forKey: "filename") as? String ?? ""
+            let fileContent = blobMessage?.object(forKey: "fileContent") as? String ?? ""
+
+            guard let writePath = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(filename) else { return }
+
+            try fileContent.write(to: writePath, atomically: true, encoding: .utf8)
+        
+            let activityController = UIActivityViewController(activityItems: [writePath], applicationActivities: nil)
+            self.present(activityController, animated: true, completion: nil)
+        } catch {
+        }
     }
 
 }
