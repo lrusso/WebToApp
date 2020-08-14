@@ -73,7 +73,8 @@ class WebToApp
 		var reader = new FileReader();
 		reader.onload = function(event)
 			{
-			_WebToApp.download(event.target.result, _WebToApp.fileName, _WebToApp.mimeType);
+			_WebToApp.data = event.target.result;
+			_WebToApp.download();
 			};
 		reader.readAsArrayBuffer(blob);
 		}
