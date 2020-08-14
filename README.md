@@ -24,7 +24,7 @@ function downloadBinaryFile(myArrayBuffer, filename)
 
 function downloadTextFile(textContent, filename)
     {
-    new WebToApp(textContent, filename, "application/octet-stream");
+    new WebToApp(myArrayBuffer, filename, "application/octet-stream");
     }
 ```
 
