@@ -25,6 +25,25 @@ new WebToApp(myArrayBuffer, "image.jpg");
 new WebToApp("example123", "myfile.txt");
 ```
 
+## HTML + JavaScript example - How to read a file
+```javascript
+<input type="file" onchange="readingAFile(event.target.files);" />
+
+<script>
+    function readingAFile(files)
+        {
+        var filereader = new FileReader();
+        filereader.file_name = files[0].name;
+        filereader.onload = function()
+            {
+            var myArrayBuffer = this.result;
+            var myFilename = files[0].name;
+            };
+				filereader.readAsArrayBuffer(files[0]);
+        }
+</script>
+```
+
 ## Android porting notes
 
 Every downloaded Blob file is automatically written in the **Downloads** folder. If the file already exists, a new file will be created with a suffix, for example: **MyFileName(1).txt**.
