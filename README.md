@@ -22,7 +22,7 @@ new WebToApp(myArrayBuffer, "image.jpg");
 ## JavaScript example - How to download a text file
 
 ```javascript
-new WebToApp("example123","myfile.txt");
+new WebToApp("example123", "myfile.txt");
 ```
 
 ## Android porting notes
