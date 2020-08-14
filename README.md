@@ -52,7 +52,7 @@ new WebToApp("example123", "myTextFile.txt");
 
 ## How to test WebToApp
 
-* Copy the file **WebToApp.htm** to some of the available ports to test the described features. You can modify the code of the porting that you want to use to load **WebToApp.htm** instead of **SpiderGame.htm**.
+* Copy the file **WebToApp.htm** to some of the available ports to test the described features. You can modify the code of the porting that you want to use to load **WebToApp.htm** instead of **SpiderGame.htm** (or just rename **WebToApp.htm**).
 
 ## Android porting notes
 
