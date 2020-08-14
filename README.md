@@ -14,7 +14,7 @@ The App has a WebView that shows you the content of a embedded HTML file. Also, 
 | OS X | OS X 10.12 or later | Yes | Yes
 | Android | Android 5.0 or later | Yes | Yes
 
-## Web example - How to read a file from the device
+## JavaScript example - How to download a file to the device
 
 ```javascript
 function downloadBinaryFile(myArrayBuffer, filename)
@@ -26,7 +26,6 @@ function downloadTextFile(textContent, filename)
     {
     new WebToApp(textContent, filename, "application/octet-stream");
     }
-</script>
 ```
 
 ## Android porting notes
