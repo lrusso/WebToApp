@@ -39,7 +39,7 @@ new WebToApp("example123", "myfile.txt");
             var myArrayBuffer = this.result;
             var myFilename = files[0].name;
             };
-				filereader.readAsArrayBuffer(files[0]);
+        filereader.readAsArrayBuffer(files[0]);
         }
 </script>
 ```
