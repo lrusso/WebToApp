@@ -19,12 +19,12 @@ The App has a WebView that shows you the content of a embedded HTML file. Also, 
 ```javascript
 function downloadBinaryFile(myArrayBuffer, filename)
     {
-    new WebToApp(myArrayBuffer, filename, "application/octet-stream");
+    new WebToApp(myArrayBuffer, filename, "application/octet-stream", true);
     }
 
 function downloadTextFile(textContent, filename)
     {
-    new WebToApp(textContent, filename, "application/octet-stream", true);
+    new WebToApp(textContent, filename, "application/octet-stream", false);
     }
 ```
 
