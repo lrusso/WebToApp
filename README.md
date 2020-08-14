@@ -16,62 +16,17 @@ The App has a WebView that shows you the content of a embedded HTML file. Also, 
 
 ## Web example - How to read a file from the device
 
-```
-<input type="file" onchange="readingAFile(event.target.files);"/>
+```javascript
+function downloadBinaryFile(myArrayBuffer, filename)
+    {
+    new WebToApp(myArrayBuffer, filename, "application/octet-stream");
+    }
 
-<script>
-   function readingAFile(files)
-      {
-      var filereader = new FileReader();
-      filereader.file_name = files[0].name;
-      filereader.onload = function()
-         {
-         var filename = files[0].name;
-         var fileContent = this.result;
-         };
-      filereader.readAsArrayBuffer(files[0]);
-      }
+function downloadTextFile(textContent, filename)
+    {
+    new WebToApp(textContent, filename, "application/octet-stream");
+    }
 </script>
-```
-
-## Web example - How to write a file to the device
-
-```
-function download_Blob(data, fileName, mimeType)
-   {
-   try
-      {
-      // Creating the object with the data for the iOS or OS X native App
-      var WEBTOAPP_DATA = {filename: fileName, fileContent: data};
-
-      // Sending the object to the iOS or OS X native App
-      window.webkit.messageHandlers.webToApp.postMessage(WEBTOAPP_DATA);
-      }
-   catch(err)
-      {
-      // Sending the filename to the Android native App
-      console.log("WEBTOAPP_FILENAME=" + fileName);
-
-      // Sending the data to the Android native App or a Web browser
-      var blob = new Blob([data], {type: mimeType});
-      var url = window.URL.createObjectURL(blob);
-      download_URL(url, fileName);
-      }
-   }
-
-function download_URL(data, fileName)
-   {
-   var a;
-   a = document.createElement("a");
-   a.href = data;
-   a.download = fileName;
-   document.body.appendChild(a);
-   a.style = "display: none";
-   a.click();
-   a.remove();
-   }
-
-download_Blob("myData123", "MyFileName.txt", "application/octet-stream");
 ```
 
 ## Android porting notes
