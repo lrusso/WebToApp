@@ -17,11 +17,17 @@ The App has a WebView that shows you the content of a embedded HTML file. Also, 
 ## JavaScript example - How to download a binary file
 
 ```javascript
+// WebToApp.min.js
+...
+
 new WebToApp(myArrayBuffer, "image.jpg");
 ```
 ## JavaScript example - How to download a text file
 
 ```javascript
+// WebToApp.min.js
+...
+
 new WebToApp("example123", "myfile.txt");
 ```
 
