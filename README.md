@@ -17,7 +17,7 @@ The App has a WebView that shows you the content of a embedded HTML file. Also, 
 ## JavaScript example - How to download a binary file
 
 ```javascript
-// WebToApp.min.js
+// WebToApp.min.js code added to your embedded HTML file
 ...
 
 new WebToApp(myArrayBuffer, "myImageFile.jpg");
@@ -25,7 +25,7 @@ new WebToApp(myArrayBuffer, "myImageFile.jpg");
 ## JavaScript example - How to download a text file
 
 ```javascript
-// WebToApp.min.js
+// WebToApp.min.js code added to your embedded HTML file
 ...
 
 new WebToApp("example123", "myTextFile.txt");
@@ -49,6 +49,10 @@ new WebToApp("example123", "myTextFile.txt");
         }
 </script>
 ```
+
+## How to test WebToApp
+
+* Copy the file **WebToApp.htm** to some of the available ports to test the described features. You can modify the code of the porting that you want to use to load **WebToApp.htm** instead of **SpiderGame.htm**.
 
 ## Android porting notes
 
