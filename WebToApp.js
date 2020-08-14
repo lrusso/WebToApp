@@ -2,32 +2,52 @@ class WebToApp
 	{
 	constructor(data, fileName, mimeType)
 		{
+		// SETTING THE RECEIVED VALUES
+		this.data = data;
+		this.fileName = fileName;
+		this.mimeType = mimeType;
+
+		// CHECKING THE DATA TYPE
+		if (typeof this.data === "string" || this.data instanceof String)
+			{
+			// CONVERTING THE STRING TO AN ARRAYBUFFER BEFORE DOWNLOADING
+			this.stringToArrayBuffer(this.data, "UTF-8", this.download);
+			}
+			else
+			{
+			// DOWNLOADING THE FILE
+			this.download();
+			}
+		}
+
+	download()
+		{
 		try
 			{
-			// Creating the object with the data for the iOS or OS X native App
-			var WEBTOAPP_DATA = {filename: fileName, fileContent: this.arrayBufferToBase64(data)};
+			// CREATING THE OBJECT WITH THE DATA FOR THE IOS OR OS X NATIVE APP
+			var WEBTOAPP_DATA = {filename: this.fileName, fileContent: this.arrayBufferToBase64(this.data)};
 
-			// Sending the object to the iOS or OS X native App
+			// SENDING THE OBJECT TO THE IOS OR OS X NATIVE APP
 			window.webkit.messageHandlers.webToApp.postMessage(WEBTOAPP_DATA);
 			}
 			catch(err)
 			{
-			// Sending the filename to the Android native App
-			console.log("WEBTOAPP_FILENAME=" + fileName);
+			// SENDING THE FILENAME TO THE ANDROID NATIVE APP
+			console.log("WEBTOAPP_FILENAME=" + this.fileName);
 
-			// Sending the data to the Android native App or a Web browser
-			var blob = new Blob([data], {type: mimeType});
+			// SENDING THE DATA TO THE ANDROID NATIVE APP OR A WEB BROWSER
+			var blob = new Blob([this.data], {type: this.mimeType});
 			var url = window.URL.createObjectURL(blob);
-			this.download_URL(url, fileName);
+			this.download_URL(url);
 			}
 		}
 
-	download_URL(data, fileName)
+	download_URL(data)
 		{
 		var a;
 		a = document.createElement("a");
 		a.href = data;
-		a.download = fileName;
+		a.download = this.fileName;
 		document.body.appendChild(a);
 		a.style = "display: none";
 		a.click();
@@ -43,6 +63,18 @@ class WebToApp
 			{
 			binary += String.fromCharCode(bytes[i]);
 			}
-			return window.btoa(binary);
+		return window.btoa(binary);
+		}
+
+	stringToArrayBuffer(string, encoding, callback)
+		{
+		var _WebToApp = this;
+		var blob = new Blob([string], {type:"text/plain;charset=" + encoding});
+		var reader = new FileReader();
+		reader.onload = function(event)
+			{
+			_WebToApp.download(event.target.result, _WebToApp.fileName, _WebToApp.mimeType);
+			};
+		reader.readAsArrayBuffer(blob);
 		}
 	}
