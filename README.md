@@ -32,7 +32,7 @@ function downloadTextFile(textContent, filename)
     new WebToApp(textContent, filename, "application/octet-stream");
     }
     
-downloadTextFile("lorem ipsum","myfile.txt");
+downloadTextFile("example123","myfile.txt");
 ```
 
 ## Android porting notes
