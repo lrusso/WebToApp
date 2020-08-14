@@ -59,11 +59,12 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
         do {
             let blobMessage = message.body as? NSDictionary
             let filename = blobMessage?.object(forKey: "filename") as? String ?? ""
-            let fileContent = blobMessage?.object(forKey: "fileContent") as? String ?? ""
+            let fileContentRAW = blobMessage?.object(forKey: "fileContent") as? String ?? ""
+            let fileContent = Data(base64Encoded: fileContentRAW)!
 
             guard let writePath = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(filename) else { return }
 
-            try fileContent.write(to: writePath, atomically: true, encoding: .utf8)
+            try fileContent.write(to: writePath, options: .atomic)
         
             let activityController = UIActivityViewController(activityItems: [writePath], applicationActivities: nil)
             self.present(activityController, animated: true, completion: nil)
