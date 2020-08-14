@@ -20,7 +20,7 @@ The App has a WebView that shows you the content of a embedded HTML file. Also, 
 // WebToApp.min.js
 ...
 
-new WebToApp(myArrayBuffer, "image.jpg");
+new WebToApp(myArrayBuffer, "myImageFile.jpg");
 ```
 ## JavaScript example - How to download a text file
 
@@ -28,7 +28,7 @@ new WebToApp(myArrayBuffer, "image.jpg");
 // WebToApp.min.js
 ...
 
-new WebToApp("example123", "myfile.txt");
+new WebToApp("example123", "myTextFile.txt");
 ```
 
 ## HTML + JavaScript example - How to read a file
