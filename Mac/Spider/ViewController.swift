@@ -52,7 +52,8 @@ class ViewController: NSViewController, WKUIDelegate, WKScriptMessageHandler
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         let blobMessage = message.body as? NSDictionary
         let filename = blobMessage?.object(forKey: "filename") as? String ?? ""
-        let fileContent = blobMessage?.object(forKey: "fileContent") as? String ?? ""
+        let fileContentRAW = blobMessage?.object(forKey: "fileContent") as? String ?? ""
+        let fileContent = Data(base64Encoded: fileContentRAW)!
         let fileFolder = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask)[0] as NSURL
 
         let fileNameRAW = filename
@@ -96,7 +97,7 @@ class ViewController: NSViewController, WKUIDelegate, WKScriptMessageHandler
         guard let filePath = fileFolder.appendingPathComponent(fileName) else { return }
 
         do {
-            try fileContent.write(to: filePath, atomically: true, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
+            try fileContent.write(to: filePath, options: .atomic)
         }
         catch {
         }
