@@ -19,13 +19,17 @@ The App has a WebView that shows you the content of a embedded HTML file. Also, 
 ```javascript
 function downloadBinaryFile(myArrayBuffer, filename)
     {
-    new WebToApp(myArrayBuffer, filename, "application/octet-stream", true);
+    new WebToApp(myArrayBuffer, filename, "application/octet-stream");
     }
+
+downloadBinaryFile(myArrayBuffer, "image.jpg");
 
 function downloadTextFile(textContent, filename)
     {
-    new WebToApp(textContent, filename, "application/octet-stream", false);
+    new WebToApp(textContent, filename, "application/octet-stream");
     }
+    
+downloadTextFile("lorem ipsum","myfile.txt");
 ```
 
 ## Android porting notes
