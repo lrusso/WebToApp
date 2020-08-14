@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D2856E624E7379F008FB9D3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2856E524E7379F008FB9D3 /* WebKit.framework */; };
 		4D68813324C6AE4400494532 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D68813224C6AE4400494532 /* AppDelegate.swift */; };
 		4D68813724C6AE4400494532 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D68813624C6AE4400494532 /* ViewController.swift */; };
 		4D68813A24C6AE4400494532 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D68813824C6AE4400494532 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D2856E524E7379F008FB9D3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		4D68812F24C6AE4400494532 /* Spider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D68813224C6AE4400494532 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D68813624C6AE4400494532 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D2856E624E7379F008FB9D3 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D2856E424E7379F008FB9D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D2856E524E7379F008FB9D3 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4D68812624C6AE4400494532 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +93,7 @@
 				4D68814824C6AE4600494532 /* SpiderTests */,
 				4D68815324C6AE4600494532 /* SpiderUITests */,
 				4D68813024C6AE4400494532 /* Products */,
+				4D2856E424E7379F008FB9D3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -354,7 +366,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -408,7 +420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
