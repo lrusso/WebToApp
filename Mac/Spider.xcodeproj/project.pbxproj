@@ -12,8 +12,6 @@
 		4D2C088924B97BDF004927E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C088824B97BDF004927E4 /* ViewController.swift */; };
 		4D2C088B24B97BE2004927E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D2C088A24B97BE2004927E4 /* Assets.xcassets */; };
 		4D2C088E24B97BE2004927E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D2C088C24B97BE2004927E4 /* Main.storyboard */; };
-		4D2C089A24B97BE3004927E4 /* SpiderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C089924B97BE3004927E4 /* SpiderTests.swift */; };
-		4D2C08A524B97BE3004927E4 /* SpiderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C08A424B97BE3004927E4 /* SpiderUITests.swift */; };
 		4D2C08B324B97C03004927E4 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 4D2C08B224B97C03004927E4 /* www */; };
 /* End PBXBuildFile section */
 
@@ -44,11 +42,7 @@
 		4D2C088F24B97BE2004927E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D2C089024B97BE2004927E4 /* Spider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Spider.entitlements; sourceTree = "<group>"; };
 		4D2C089524B97BE3004927E4 /* SpiderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpiderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D2C089924B97BE3004927E4 /* SpiderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiderTests.swift; sourceTree = "<group>"; };
-		4D2C089B24B97BE3004927E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D2C08A024B97BE3004927E4 /* SpiderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpiderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D2C08A424B97BE3004927E4 /* SpiderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiderUITests.swift; sourceTree = "<group>"; };
-		4D2C08A624B97BE3004927E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D2C08B224B97C03004927E4 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,8 +76,6 @@
 			children = (
 				4D2C08B224B97C03004927E4 /* www */,
 				4D2C088524B97BDF004927E4 /* Spider */,
-				4D2C089824B97BE3004927E4 /* SpiderTests */,
-				4D2C08A324B97BE3004927E4 /* SpiderUITests */,
 				4D2C088424B97BDF004927E4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -110,24 +102,6 @@
 				4D02197F24BBF0F2004D3EA4 /* WindowController.swift */,
 			);
 			path = Spider;
-			sourceTree = "<group>";
-		};
-		4D2C089824B97BE3004927E4 /* SpiderTests */ = {
-			isa = PBXGroup;
-			children = (
-				4D2C089924B97BE3004927E4 /* SpiderTests.swift */,
-				4D2C089B24B97BE3004927E4 /* Info.plist */,
-			);
-			path = SpiderTests;
-			sourceTree = "<group>";
-		};
-		4D2C08A324B97BE3004927E4 /* SpiderUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4D2C08A424B97BE3004927E4 /* SpiderUITests.swift */,
-				4D2C08A624B97BE3004927E4 /* Info.plist */,
-			);
-			path = SpiderUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +167,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = "Leonardo Javier Russo";
 				TargetAttributes = {
 					4D2C088224B97BDF004927E4 = {
@@ -271,7 +245,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D2C089A24B97BE3004927E4 /* SpiderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +252,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D2C08A524B97BE3004927E4 /* SpiderUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +308,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -396,6 +369,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -428,6 +402,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Spider/Spider.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Spider/Info.plist;
@@ -447,6 +422,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Spider/Spider.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Spider/Info.plist;

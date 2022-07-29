@@ -13,22 +13,30 @@ class ViewController: NSViewController, WKUIDelegate, WKScriptMessageHandler
     {
     var webView: WKWebView!
 
-    override func loadView()
-        {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // SETTING THAT THE WEBVIEW CONFIGURATION
         let webConfiguration = WKWebViewConfiguration()
         webConfiguration.userContentController.add(self, name: "webToApp")
         webConfiguration.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
-        webView = WKWebView (frame: CGRect(x:0, y:0, width: 800, height: 600), configuration:webConfiguration)
-        webView.uiDelegate = self
-        view = webView
-        }
+        webConfiguration.mediaTypesRequiringUserActionForPlayback = []
 
-    override func viewDidLoad() {
-    super.viewDidLoad()
-    if let url = Bundle.main.url (forResource: "SpiderGame", withExtension: "htm", subdirectory: "www") {
-        let path = url.deletingLastPathComponent()
-        self.webView.loadFileURL ( url, allowingReadAccessTo: path)
-        self.view = webView
+        // CREATING THE WEBVIEW WITH A BLACK BACKGROUND
+        webView = WKWebView(frame: CGRect(x:0, y:0, width: 800, height: 600), configuration: webConfiguration)
+    
+        // LOADING THE LOCAL WEB GAME URL
+        let htmlFile = Bundle.main.path(forResource: "www/SpiderGame", ofType: "htm")
+        let htmlString = try? String(contentsOfFile: htmlFile!, encoding: String.Encoding.utf8)
+        webView.loadHTMLString(htmlString!, baseURL: URL(string: "https://www.yourdomain.com"))
+
+        // ADDING THE WEBVIEW TO THE VIEW AND DELEGATING THE EVENTS
+        self.view = self.webView!
+        webView.uiDelegate = self
+        
+        // FORCING FOCUS IN THE WEBVIEW EVERY 250 MS
+        Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { [self] (timer) in
+            webView.becomeFirstResponder()
         }
     }
 
