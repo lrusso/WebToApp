@@ -12,8 +12,6 @@
 		4D68813724C6AE4400494532 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D68813624C6AE4400494532 /* ViewController.swift */; };
 		4D68813A24C6AE4400494532 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D68813824C6AE4400494532 /* Main.storyboard */; };
 		4D68813C24C6AE4500494532 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D68813B24C6AE4500494532 /* Assets.xcassets */; };
-		4D68814A24C6AE4600494532 /* SpiderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D68814924C6AE4600494532 /* SpiderTests.swift */; };
-		4D68815524C6AE4600494532 /* SpiderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D68815424C6AE4600494532 /* SpiderUITests.swift */; };
 		4D68816324C6B0BF00494532 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 4D68816224C6B0BF00494532 /* www */; };
 /* End PBXBuildFile section */
 
@@ -43,11 +41,7 @@
 		4D68813B24C6AE4500494532 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D68814024C6AE4600494532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D68814524C6AE4600494532 /* SpiderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpiderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D68814924C6AE4600494532 /* SpiderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiderTests.swift; sourceTree = "<group>"; };
-		4D68814B24C6AE4600494532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D68815024C6AE4600494532 /* SpiderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpiderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D68815424C6AE4600494532 /* SpiderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiderUITests.swift; sourceTree = "<group>"; };
-		4D68815624C6AE4600494532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D68816224C6B0BF00494532 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,8 +84,6 @@
 			children = (
 				4D68816224C6B0BF00494532 /* www */,
 				4D68813124C6AE4400494532 /* Spider */,
-				4D68814824C6AE4600494532 /* SpiderTests */,
-				4D68815324C6AE4600494532 /* SpiderUITests */,
 				4D68813024C6AE4400494532 /* Products */,
 				4D2856E424E7379F008FB9D3 /* Frameworks */,
 			);
@@ -117,24 +109,6 @@
 				4D68814024C6AE4600494532 /* Info.plist */,
 			);
 			path = Spider;
-			sourceTree = "<group>";
-		};
-		4D68814824C6AE4600494532 /* SpiderTests */ = {
-			isa = PBXGroup;
-			children = (
-				4D68814924C6AE4600494532 /* SpiderTests.swift */,
-				4D68814B24C6AE4600494532 /* Info.plist */,
-			);
-			path = SpiderTests;
-			sourceTree = "<group>";
-		};
-		4D68815324C6AE4600494532 /* SpiderUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4D68815424C6AE4600494532 /* SpiderUITests.swift */,
-				4D68815624C6AE4600494532 /* Info.plist */,
-			);
-			path = SpiderUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,7 +251,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D68814A24C6AE4600494532 /* SpiderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +258,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D68815524C6AE4600494532 /* SpiderUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
