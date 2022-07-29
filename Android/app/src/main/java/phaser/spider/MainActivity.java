@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,7 +15,12 @@ import android.webkit.ConsoleMessage;
 import android.webkit.DownloadListener;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
+
+import androidx.annotation.RequiresApi;
+import androidx.webkit.WebViewAssetLoader;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,6 +33,7 @@ public class MainActivity extends Activity
     private static ValueCallback<Uri[]> mUploadMessage5;
     private final static int FILECHOOSER_RESULTCODE = 1;
     private final static int PERMISSION_REQUEST = 123;
+    private WebViewAssetLoader assetLoader;
     private WebView webView;
 
     @Override protected void onCreate(Bundle savedInstanceState)
@@ -36,7 +43,10 @@ public class MainActivity extends Activity
 
         hideNavigationBar();
 
+        assetLoader = new WebViewAssetLoader.Builder().addPathHandler("/assets/", new WebViewAssetLoader.AssetsPathHandler(this)).build();
+
         webView = (WebView) findViewById(R.id.webView1);
+        webView.getSettings().setMediaPlaybackRequiresUserGesture(false);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setAllowFileAccess(true);
         webView.getSettings().setDomStorageEnabled(true);
@@ -47,8 +57,20 @@ public class MainActivity extends Activity
 
         webView.addJavascriptInterface(new JavaScriptInterface(this), "Android");
         webView.setDownloadListener(new DownloadListener(){@Override public void onDownloadStart(String url, String userAgent, String contentDisposition, String mimeType, long contentLength) {webView.loadUrl(JavaScriptInterface.getBase64StringFromBlobUrl(url));}});
+        webView.setBackgroundColor(Color.rgb(0,0,0));
 
-        webView.setWebViewClient(new myWebClient());
+        webView.setWebViewClient(new myWebClient() {
+            @Override @RequiresApi(21) public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request)
+                {
+                return assetLoader.shouldInterceptRequest(request.getUrl());
+                }
+
+            @Override @SuppressWarnings("deprecation") public WebResourceResponse shouldInterceptRequest(WebView view, String request)
+                {
+                return assetLoader.shouldInterceptRequest(Uri.parse(request));
+                }
+            }
+        );
         webView.setWebChromeClient(new WebChromeClient()
             {
             // For Android 3.0+
@@ -105,8 +127,7 @@ public class MainActivity extends Activity
                 };
             });
 
-        String htmlData = loadAssetTextAsString("SpiderGame.htm", this);
-        webView.loadDataWithBaseURL(null, htmlData, "text/html", "UTF-8",null);
+        webView.loadUrl("https://appassets.androidplatform.net/assets/SpiderGame.htm");
 
         if (Build.VERSION.SDK_INT>=23) //MARSHMALLOW
             {
