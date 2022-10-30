@@ -8,10 +8,10 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.webkit.JavascriptInterface;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.OutputStream;
 
 public class JavaScriptInterface {
@@ -125,9 +125,11 @@ public class JavaScriptInterface {
                 }
 
             // Patch for Android 8.0 and above
-            String header = "data:application/octet-stream;base64,";
-            int located = base64Data.indexOf(header);
-            base64Data = base64Data.substring(located + header.length(),base64Data.length());
+            int located1 = base64Data.indexOf("data:");
+            int located2 = base64Data.indexOf("base64,");
+            if (located1==0 && located2>-1) {
+                base64Data = base64Data.substring(located2 + 7,base64Data.length());
+            }
 
             // Writing the file
             byte[] fileAsBytes = Base64.decode(base64Data, 0);
@@ -461,9 +463,11 @@ public class JavaScriptInterface {
             }
 
         // Patch for Android 8.0 and above
-        String header = "data:application/octet-stream;base64,";
-        int located = base64Data.indexOf(header);
-        base64Data = base64Data.substring(located + header.length(),base64Data.length());
+        int located1 = base64Data.indexOf("data:");
+        int located2 = base64Data.indexOf("base64,");
+        if (located1==0 && located2>-1) {
+            base64Data = base64Data.substring(located2 + 7,base64Data.length());
+        }
 
         // Getting file content
         byte[] fileAsBytes = Base64.decode(base64Data, 0);
